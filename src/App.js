@@ -1,9 +1,8 @@
 import React from "react";
 import "./App.css";
-import TabWidget from "./components/TabWidget";
-import Widget from "./components/Widget";
-import Search from "./components/Search";
-import Banner from "./components/Banner";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
 
 /* Данные-заглушки для иллюстрации */
 const newsList = {
@@ -50,19 +49,9 @@ const importantNews = {
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <TabWidget items={newsList} />
-        <Widget {...importantNews} />
-      </header>
-      <main className="App-main">
-        <Search />
-        <Banner />
-        <Widget />
-        <Widget />
-        <Widget />
-        <Widget />
-        <Widget />
-      </main>
+      <Header newsList={newsList} importantNews={importantNews} />
+      <Main />
+      <Footer>Some text & links</Footer>
     </div>
   );
 }
